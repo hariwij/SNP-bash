@@ -1,0 +1,31 @@
+===============================================================
+Gobuster v3.6
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://192.168.1.9
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                ./common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.6
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+[2K/.hta                 (Status: 403) [Size: 288]
+[2K/.htaccess            (Status: 403) [Size: 293]
+[2K/.htpasswd            (Status: 403) [Size: 293]
+[2K/cgi-bin/             (Status: 403) [Size: 292]
+[2K/dav                  (Status: 301) [Size: 313] [--> http://192.168.1.9/dav/]
+[2K/index                (Status: 200) [Size: 891]
+[2K/index.php            (Status: 200) [Size: 891]
+[2K/phpMyAdmin           (Status: 301) [Size: 320] [--> http://192.168.1.9/phpMyAdmin/]
+[2K/server-status        (Status: 403) [Size: 297]
+[2K/test                 (Status: 301) [Size: 314] [--> http://192.168.1.9/test/]
+[2K/twiki                (Status: 301) [Size: 315] [--> http://192.168.1.9/twiki/]
+[2K/phpinfo.php          (Status: 200) [Size: 47975]
+
+[2K/phpinfo              (Status: 200) [Size: 47963]
+===============================================================
+Finished
+===============================================================
