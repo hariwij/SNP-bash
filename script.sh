@@ -120,26 +120,6 @@ nikto_scan() {
     tput sgr0
 }
 
-# dmitry_scan() function
-dmitry_scan() {
-    tput setaf 6
-    echo "Scanning the target using dmitry...\n"
-
-    if [ -z "$2" ]; then
-        while IFS= read -r url; do
-            dmitry -winsepfb $url
-        done <$1
-        echo "Scan completed.\n"
-
-    else
-        while IFS= read -r url; do
-            dmitry -winsepfb $url >> $2
-        done <$1
-        echo "Scan completed. Results are saved to: $2\n"
-    fi
-
-    tput sgr0
-}
 
 # Parsing command line arguments
 while getopts ":t:l:o:" opt; do
@@ -184,7 +164,6 @@ if [ -z "$output" ]; then
     nmap_scan $list
     gobuster_scan $list ./common.txt
     nikto_scan $list
-    dmitry_scan $list
 else
     whois_scan $list $output/whois.txt
     nslookup_scan $list $output/nslookup.txt
@@ -192,6 +171,5 @@ else
     nmap_scan $list $output/nmap.txt
     gobuster_scan $list ./common.txt $output/gobuster.txt
     nikto_scan $list $output/nikto.txt
-    dmitry_scan $list $output/dmitry.txt
 fi
 
